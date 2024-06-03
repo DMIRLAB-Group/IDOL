@@ -9,7 +9,6 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='iTransformer')
 
-    parser.add_argument('--drop_last', type=int, default=1)
     parser.add_argument('--draw', type=int, default=0, help='draw')
 
     parser.add_argument('--seed', type=int, default=2024, help='seed')
