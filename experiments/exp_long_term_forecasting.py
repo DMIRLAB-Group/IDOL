@@ -299,8 +299,8 @@ class Exp_Long_Term_Forecast(Exp_Basic):
                     pd = np.concatenate((input[0, :, -1], pred[0, :, -1]), axis=0)
                     # visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
                 """
-        preds = np.array(preds)
-        trues = np.array(trues)
+        preds = np.concatenate(preds, axis=0)
+        trues = np.concatenate(trues, axis=0)
         print('test shape:', preds.shape, trues.shape)
         print('test shape:', preds.shape, trues.shape)
 
@@ -342,6 +342,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
             np.save(f'{draw_path}/preds.npy', preds)
 
         return
+        """
         skeleton = Skeleton(parents=[-1, 0, 1, 2, 3, 4, 0, 6, 7, 8, 9, 0, 11, 12, 13, 14, 12,
                                      16, 17, 18, 19, 20, 19, 22, 12, 24, 25, 26, 27, 28, 27, 30],
                             joints_left=[6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23],
@@ -350,6 +351,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
         skeleton.remove_joints(removed_joints)
         skeleton._parents[11] = 8
         skeleton._parents[14] = 8
+        """
 
         n = int(len(trues) / 2)
         for i in tqdm(range(381, n)):
