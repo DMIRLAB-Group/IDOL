@@ -415,7 +415,7 @@ class Model(nn.Module):
         zeros = torch.zeros([x_dec.shape[0], self.pred_len, x_dec.shape[2]], device=x_enc.device)
         seasonal_init_dec = torch.cat([seasonal_init_enc[:, -self.seq_len:, :], zeros], dim=1)
         dec_out_mean = self.dec_embedding(seasonal_init_dec, x_mark_dec)
-        dec_out_std = self.dec_embedding(seasonal_init_dec, x_mark_dec)
+        dec_out_std = self.dec_embedding1(seasonal_init_dec, x_mark_dec)
         
         if is_train:
             dec_out = self.reparametrize(dec_out_mean, dec_out_std)
