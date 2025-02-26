@@ -1,0 +1,42 @@
+#########################
+# Model Configurations  #
+#########################
+
+LOG: '../log'
+DATASET: 'F'
+
+WANDB:
+    PROJ_NAME: 'idol'
+    LOG_NAME: 'F_dim16'
+  
+VAE:
+    CPU: 8
+    TRAIN_BS: 64
+    VAL_BS: 1024
+    EPOCHS: 100
+    N_VAL_SAMPLES: 1024
+    NCLASS: 15
+    EMBED_DIM: 2
+    LAG: 1
+    LR: 1.0e-3
+    BETA: 3.0e-3
+    GAMMA: 1.0e-2
+    THETA: 1.0e-4
+    # THETA: 0.0
+    INPUT_DIM: 16
+    LATENT_DIM: 16
+    LATENT_DIM_FIX: 16
+    LATENT_DIM_CHANGE: 0
+    BIAS: FALSE
+    ENC:
+        HIDDEN_DIM: 128
+    DEC:
+        HIDDEN_DIM: 128
+        DIST: 'gaussian'
+    PIN: TRUE
+    FLEXIBLE_SPARTSITY:
+        ENABLE: FALSE
+
+MCC:
+    FREQ: 0.5
+    CORR: 'Pearson' # 'Spearman'
