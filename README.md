@@ -89,5 +89,12 @@ Partial visualization results are shown in Figure 3.
 If you find this repository useful in your research, please consider citing the following papers:
 
 ```
-To be continued...
+@inproceedings{
+li2025on,
+title={On the Identification of Temporal Causal Representation with Instantaneous Dependence},
+author={Zijian Li and Yifan Shen and Kaitao Zheng and Ruichu Cai and Xiangchen Song and Mingming Gong and Guangyi Chen and Kun Zhang},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=2efNHgYRvM}
+}
 ```
