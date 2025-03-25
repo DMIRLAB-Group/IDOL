@@ -324,7 +324,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
         f.write('\n')
         f.close()
             
-        if self.args.draw and self.args.data == 'Human' or self.args.data == 'Humaneva'):
+        if self.args.draw and self.args.data == 'Human' or self.args.data == 'Humaneva':
             trues = np.concatenate(y_list, axis=0)
             preds = np.concatenate(y_hat_list, axis=0)
 
