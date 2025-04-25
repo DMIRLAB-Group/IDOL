@@ -144,9 +144,9 @@ def stationary_z_link(z_dim = 5, hist = 0, inst = False, name = 'data'):
         y_t[:,0] = y_t[:,0] * y_t_noise[:,0] + y_t_noise[:,0]
         for i in range(1, latent_size):
             if inst:
-                y_t[:,i] = y_t[:,i] * y_t_noise[:,i] + y_t_noise[:,i]
-            else:
                 y_t[:,i] = (p_hist * y_t[:,i] + (1-p_hist) * y_t[:,i-1]) * y_t_noise[:,i] + y_t_noise[:,i]
+            else:
+                y_t[:,i] = y_t[:,i] * y_t_noise[:,i] + y_t_noise[:,i]                
 
 
         yt.append(y_t)
